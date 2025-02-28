@@ -41,7 +41,7 @@ export async function POST(request: NextRequest, response: NextResponse) {
   const { data, error } = await resend.emails.send({
     from: "MedLabz<suporte@medlabz.com.br>",
     to: [email],
-    subject: "Obrigado por entrar na lista de espera do Fast·Report!",
+    subject: "Obrigado por entrar na lista de espera do Fast Report!",
     reply_to: "suporte@medlabz.com.br",
     html:  await render(FastReportWelcomeEmail({ userFirstname: firstname })),
   });

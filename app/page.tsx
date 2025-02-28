@@ -83,21 +83,21 @@ export default function Home() {
     });
 
     toast.promise(promise, {
-      loading: "Adicionando você à lista de espera... 🚀",
+      loading: "Adicionando você à lista de espera...",
       success: (data) => {
         setName("");
         setEmail("");
-        return "Obrigado por entrar na lista de espera do FastReport! 🎉";
+        return "Obrigado por entrar na lista de espera do FastReport!";
       },
       error: (error) => {
         if (error === "Rate limited") {
           return "Muitas tentativas. Por favor, tente novamente mais tarde.";
         } else if (error === "Email sending failed") {
-          return "Falha ao enviar email. Por favor, tente novamente 😢.";
+          return "Falha ao enviar email. Por favor, tente novamente.";
         } else if (error === "Database insertion failed") {
-          return "Falha ao salvar seus dados. Por favor, tente novamente 😢.";
+          return "Falha ao salvar seus dados. Por favor, tente novamente.";
         }
-        return "Ocorreu um erro. Por favor, tente novamente 😢.";
+        return "Ocorreu um erro. Por favor, tente novamente.";
       },
     });
 
