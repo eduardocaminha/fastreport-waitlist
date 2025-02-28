@@ -1,6 +1,6 @@
 import { render } from "@react-email/render";
 
-import WelcomeTemplate from "../../../emails";
+import FastReportWelcomeEmail from "../../../emails";
 
 import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
@@ -28,7 +28,7 @@ export async function POST(request: NextRequest, response: NextResponse) {
   if (!result.success) {
     return Response.json(
       {
-        error: "Too many requests!!",
+        error: "Muitas requisições! Tente novamente mais tarde.",
       },
       {
         status: 429,
@@ -39,11 +39,11 @@ export async function POST(request: NextRequest, response: NextResponse) {
   const { email, firstname } = await request.json();
 
   const { data, error } = await resend.emails.send({
-    from: "Lakshay<hello@waitlist.lakshb.dev>",
+    from: "MedLabz<contato@medlabz.com.br>",
     to: [email],
-    subject: "Thankyou for wailisting the Next.js + Notion CMS template!",
-    reply_to: "lakshb.work@gmail.com",
-    html:  await render(WelcomeTemplate({ userFirstname: firstname })),
+    subject: "Obrigado por entrar na lista de espera do Fast·Report!",
+    reply_to: "contato@medlabz.com.br",
+    html:  await render(FastReportWelcomeEmail({ userFirstname: firstname })),
   });
 
   // const { data, error } = { data: true, error: null }
@@ -53,8 +53,8 @@ export async function POST(request: NextRequest, response: NextResponse) {
   }
 
   if (!data) {
-    return NextResponse.json({ message: "Failed to send email" });
+    return NextResponse.json({ message: "Falha ao enviar email" });
   }
 
-  return NextResponse.json({ message: "Email sent successfully" });
+  return NextResponse.json({ message: "Email enviado com sucesso" });
 }

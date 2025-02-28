@@ -4,9 +4,7 @@ import { toast } from "sonner";
 import { useState } from "react";
 import CTA from "@/components/cta";
 import Form from "@/components/form";
-import Logos from "@/components/logos";
 import Particles from "@/components/ui/particles";
-import Header from "@/components/header";
 import Footer from "@/components/footer";
 
 export default function Home() {
@@ -29,12 +27,12 @@ export default function Home() {
 
   const handleSubmit = async () => {
     if (!name || !email) {
-      toast.error("Please fill in all fields 😠");
+      toast.error("Por favor, preencha todos os campos 😠");
       return;
     }
 
     if (!isValidEmail(email)) {
-      toast.error("Please enter a valid email address 😠");
+      toast.error("Por favor, insira um endereço de email válido 😠");
       return;
     }
 
@@ -74,7 +72,7 @@ export default function Home() {
           if (notionResponse.status === 429) {
             reject("Rate limited");
           } else {
-            reject("Notion insertion failed");
+            reject("Database insertion failed");
           }
         } else {
           resolve({ name });
@@ -85,21 +83,21 @@ export default function Home() {
     });
 
     toast.promise(promise, {
-      loading: "Getting you on the waitlist... 🚀",
+      loading: "Adicionando você à lista de espera... 🚀",
       success: (data) => {
         setName("");
         setEmail("");
-        return "Thank you for joining the waitlist 🎉";
+        return "Obrigado por entrar na lista de espera do FastReport! 🎉";
       },
       error: (error) => {
         if (error === "Rate limited") {
-          return "You're doing that too much. Please try again later";
+          return "Muitas tentativas. Por favor, tente novamente mais tarde.";
         } else if (error === "Email sending failed") {
-          return "Failed to send email. Please try again 😢.";
-        } else if (error === "Notion insertion failed") {
-          return "Failed to save your details. Please try again 😢.";
+          return "Falha ao enviar email. Por favor, tente novamente 😢.";
+        } else if (error === "Database insertion failed") {
+          return "Falha ao salvar seus dados. Por favor, tente novamente 😢.";
         }
-        return "An error occurred. Please try again 😢.";
+        return "Ocorreu um erro. Por favor, tente novamente 😢.";
       },
     });
 
@@ -111,8 +109,6 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center overflow-x-clip pt-12 md:pt-24">
       <section className="flex flex-col items-center px-4 sm:px-6 lg:px-8">
-        <Header />
-
         <CTA />
 
         <Form
@@ -123,17 +119,15 @@ export default function Home() {
           handleSubmit={handleSubmit}
           loading={loading}
         />
-
-        <Logos />
       </section>
 
       <Footer />
 
       <Particles
-        quantityDesktop={350}
+        quantityDesktop={1500}
         quantityMobile={100}
         ease={80}
-        color={"#F7FF9B"}
+        color={"#A855F7"}
         refresh
       />
     </main>

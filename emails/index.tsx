@@ -14,110 +14,113 @@ interface EmailProps {
   userFirstname: string;
 }
 
-export const NotionWaitlistEmail = ({ userFirstname }: EmailProps) => (
+export const FastReportWelcomeEmail = ({ userFirstname }: EmailProps) => (
   <Html>
     <Head />
-    <Preview>Thanks for Joining the Waitlist, {userFirstname}! 🎉</Preview>
+    <Preview>Obrigado por entrar na lista de espera do Fast·Report, {userFirstname}! 🎉</Preview>
     <Body style={main}>
       <Container style={container}>
         <Img
-          src={`https://nextjs-notion-waitlist.vercel.app/waitlist-logo.png`}
+          src={`https://www.medlabz.com.br/logo.png`}
           width="220"
           height="100"
-          alt="Notion Waitlist Logo"
+          alt="Logo MedLabz"
           style={logo}
         />
-        <Text style={greeting}>Hi {userFirstname},</Text>
+        <Text style={greeting}>Olá, {userFirstname}!</Text>
         <Text style={paragraph}>
-          Thanks for joining the waitlist for our Next.js + Notion CMS waitlist
-          template! I'm Lakshay, the developer behind this project. I'm glad to
-          have you on board.
+          Obrigado por entrar na lista de espera do Fast<span style={{ color: "#A855F7", fontWeight: 500 }}>Report</span>! Somos a MedLabz, a empresa por trás desta solução que ajudará médicos com laudos mais rápidos, sem complicar o fluxo de trabalho.
         </Text>
         <Text style={paragraph}>
-          I'll keep you posted on the progress and notify you as soon as it's
-          ready for you to use. In the meantime, if you have any questions or
-          feedback, don't hesitate to reach out by replying directly to{" "}
-          <a href="mailto:lakshb.work@gmail.com" style={link}>
-            this email {""}
+          Vamos mantê-lo(a) informado(a) sobre o progresso e notificá-lo(a) assim que o Fast<span style={{ color: "#A855F7", fontWeight: 500 }}>Report</span> estiver disponível para uso. Enquanto isso, se tiver alguma dúvida ou feedback, não hesite em entrar em contato respondendo diretamente a{" "}
+          <a href="mailto:contato@medlabz.com.br" style={link}>
+            este email
           </a>
-          — I'm here to listen!
+          — estamos aqui para ajudar!
         </Text>
         <Text style={paragraph}>
-          You can also follow me on X/Twitter for updates:{" "}
-          <a href="https://x.com/blakssh" style={link}>
-            @blakssh
+          Você também pode visitar nosso site para mais informações:{" "}
+          <a href="https://www.medlabz.com.br" style={link}>
+            www.medlabz.com.br
           </a>
         </Text>
         <Text style={signOff}>
-          Best regards,
+          Atenciosamente,
           <br />
-          Lakshay
+          <span style={{ fontWeight: 600 }}>Equipe MedLabz</span>
         </Text>
         <Hr style={hr} />
         <Text style={footer}>
-          You received this email because you signed up for the Notion waitlist.
-          If you believe this is a mistake, feel free to ignore this email.
+          Você recebeu este email porque se inscreveu na lista de espera do Fast<span style={{ color: "#A855F7", fontWeight: 500 }}>Report</span>. Se acredita que isso é um erro, sinta-se à vontade para ignorar este email.
         </Text>
       </Container>
     </Body>
   </Html>
 );
 
-NotionWaitlistEmail.PreviewProps = {
-  userFirstname: "Tyler",
+FastReportWelcomeEmail.PreviewProps = {
+  userFirstname: "Carlos",
 } as EmailProps;
 
-export default NotionWaitlistEmail;
+export default FastReportWelcomeEmail;
 
 const main = {
-  background: "linear-gradient(-225deg, #FFE29F 0%, #FFA99F 48%, #FF719A 100%)",
-  fontFamily: 'figtree, "Helvetica Neue", Helvetica, Arial, sans-serif',
+  background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)",
+  fontFamily: 'Inter, "Helvetica Neue", Helvetica, Arial, sans-serif',
   padding: "40px 0",
-  color: "#cccccc",
+  color: "#f5f5f5",
 };
 
 const container = {
   margin: "0 auto",
-  padding: "24px 32px 48px",
+  padding: "32px 40px 48px",
   backgroundColor: "#1a1a1a",
   borderRadius: "12px",
-  boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+  boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2)",
   maxWidth: "600px",
+  border: "1px solid #333333",
 };
 
 const logo = {
   margin: "0 auto",
-  paddingBottom: "20px",
+  paddingBottom: "24px",
 };
 
 const greeting = {
-  fontSize: "18px",
-  lineHeight: "28px",
+  fontSize: "22px",
+  lineHeight: "30px",
+  fontWeight: "600",
+  marginBottom: "16px",
+  color: "#ffffff",
 };
 
 const paragraph = {
   fontSize: "16px",
   lineHeight: "26px",
   marginBottom: "20px",
+  color: "#e0e0e0",
 };
 
 const link = {
-  color: "#F7FF9B",
+  color: "#A855F7",
   textDecoration: "underline",
+  fontWeight: "500",
 };
 
 const signOff = {
   fontSize: "16px",
   lineHeight: "26px",
-  marginTop: "20px",
+  marginTop: "32px",
+  color: "#e0e0e0",
 };
 
 const hr = {
-  borderColor: "#cccccc",
-  margin: "20px 0",
+  borderColor: "#333333",
+  margin: "24px 0",
 };
 
 const footer = {
-  color: "#8c8c8c",
-  fontSize: "12px",
+  color: "#9e9e9e",
+  fontSize: "13px",
+  lineHeight: "20px",
 };

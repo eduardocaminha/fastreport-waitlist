@@ -10,13 +10,13 @@ export default function Footer() {
       animate="visible"
       className="mt-auto flex w-full items-center justify-center gap-1 border-t bg-background p-6 text-muted-foreground md:justify-start">
       <motion.div variants={itemVariants}>
-        Brought to you by{" "}
+        Desenvolvido por{" "}
         <Link
-          href="https://lakshb.dev"
+          href="https://www.medlabz.com.br"
           rel="noopener noreferrer"
           target="_blank">
-          <span className="text-zinc-300 underline underline-offset-2 transition-all duration-200 ease-linear hover:text-yellow-200">
-            lakshaybhushan
+          <span className="text-zinc-300 underline underline-offset-2 transition-all duration-200 ease-linear hover:text-purple-500">
+            MedLabz
           </span>
           .
         </Link>

@@ -29,7 +29,7 @@ export async function POST(request: Request) {
     });
 
     if (!response) {
-      throw new Error("Failed to add email to Notion");
+      throw new Error("Falha ao salvar os dados do usuário");
     }
 
     return NextResponse.json({ success: true }, { status: 200 });

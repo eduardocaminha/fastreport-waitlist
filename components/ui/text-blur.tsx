@@ -29,7 +29,7 @@ const TextBlur = ({
       animate="visible"
       transition={{ duration }}
       variants={combinedVariants}
-      className={cn(className, "drop-shadow-sm")}>
+      className={cn(className, "font-outfit font-thin drop-shadow-sm")}>
       {text}
     </motion.h1>
   )
