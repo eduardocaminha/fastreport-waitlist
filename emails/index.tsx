@@ -21,9 +21,9 @@ export const FastReportWelcomeEmail = ({ userFirstname }: EmailProps) => (
     <Body style={main}>
       <Container style={container}>
         <Img
-          src="https://www.medlabz.com.br/logo.svg"
-          width="100"
-          height="100"
+          src="https://www.medlabz.com.br/logo.png"
+          width="210"
+          height="210"
           alt="Logo MedLabz"
           style={logo}
         />
