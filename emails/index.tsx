@@ -21,8 +21,8 @@ export const FastReportWelcomeEmail = ({ userFirstname }: EmailProps) => (
     <Body style={main}>
       <Container style={container}>
         <Img
-          src={`/logo.png`}
-          width="100"
+          src="https://www.medlabz.com.br/logo.svg"
+          width="220"
           height="100"
           alt="Logo MedLabz"
           style={logo}
@@ -33,7 +33,7 @@ export const FastReportWelcomeEmail = ({ userFirstname }: EmailProps) => (
         </Text>
         <Text style={paragraph}>
           Vamos mantê-lo(a) informado(a) sobre o progresso e notificá-lo(a) assim que o Fast<span style={{ color: "#A855F7", fontWeight: 500 }}>Report</span> estiver disponível para uso. Enquanto isso, se tiver alguma dúvida ou feedback, não hesite em entrar em contato respondendo diretamente a{" "}
-          <a href="mailto:contato@medlabz.com.br" style={link}>
+          <a href="mailto:suporte@medlabz.com.br" style={link}>
             este email
           </a>
           — estamos aqui para ajudar!
